@@ -15,9 +15,9 @@ services:
       environment:
         UPLOAD_LIMIT: 20M
         MEMORY_LIMIT: 512M
-        TRIPAL_GIT_CLONE_MODULES: "https://github.com/abretaud/tripal_rest_api.git https://github.com/tripal/tripal_elasticsearch.git https://github.com/tripal/tripal_analysis_interpro.git https://github.com/tripal/tripal_analysis_go.git  https://github.com/tripal/tripal_analysis_blast.git  https://github.com/tripal/tripal_analysis_expression.git[@7240039fdeb4579afd06bbcb989cb7795bd4c342]"
+        TRIPAL_GIT_CLONE_MODULES: "https://github.com/tripal/tripal_analysis_expression.git https://github.com/abretaud/tripal_rest_api.git[@45c1c2fd31b80e4e53b4a5ac9b6c2b6a8f27e4de] https://github.com/tripal/tripal_elasticsearch.git https://github.com/tripal/tripal_analysis_interpro.git https://github.com/tripal/tripal_analysis_blast.git https://github.com/tripal/tripal_analysis_go.git[@94379540342ea4f895a7530a39eec510dd0d388b] https://github.com/genouest/tripal_bipaa_ui.git"
         TRIPAL_DOWNLOAD_MODULES: ""
-        TRIPAL_ENABLE_MODULES: "tripal_analysis_blast tripal_analysis_interpro tripal_analysis_go tripal_rest_api tripal_elasticsearch tripal_analysis_expression"
+        TRIPAL_ENABLE_MODULES: "tripal_analysis_blast tripal_analysis_interpro tripal_analysis_go tripal_rest_api tripal_elasticsearch tripal_analysis_expression tripal_bipaa_ui"
       ports:
         - "3300:80"
 

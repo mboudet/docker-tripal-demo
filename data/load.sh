@@ -133,10 +133,9 @@ tripaille analysis load_fasta \
     /data/Citrus_sinensis-orange1.1g015632m.g.fasta
 
 # Sync the features
-tripaille feature sync \
-    --types gene \
+tripaille entity publish \
+    --types Gene \
     --types mRNA \
-    --organism "C. sinensis"
 
 # Load Blast results
 tripaille analysis load_blast \
