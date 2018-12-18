@@ -136,6 +136,7 @@ tripaille analysis load_fasta \
 tripaille entity publish \
     --types Gene \
     --types mRNA \
+    --types Polypeptide
 
 # Load Blast results
 tripaille analysis load_blast \
@@ -185,7 +186,8 @@ tripaille analysis load_interpro \
 # These results are not part of the Tripal tutorial, but were added to demonstrate the use of load_go
 tripaille analysis load_go \
     --date_executed "2016-11-14" \
-    --query_type polypeptide \
+    --query_type mRNA \
+    --query_matching 'name' \
     --organism "C. sinensis" \
     "Blast2GO Annotation of C. sinensis v1.0" \
     "Blast2GO" \
@@ -208,10 +210,13 @@ tripaille expression add_expression \
     /data/expression.tsv
 
 # Populate all materialized views
+
 tripaille db populate_mviews
+
 
 # Index everything
 tripaille db index
+
 
 # Create an index for organism table
 tripaille db index --mode table --table chado.organism --index_name organisms --fields "genus|string" --fields "species|string" --links 'species|http://localhost:8500/tripal/organism/[genus]/[species]'
