@@ -213,10 +213,14 @@ tripaille expression add_expression \
 
 tripaille db populate_mviews
 
+#Prepare indices
+
+tripaille db tune
 
 # Index everything
+
 tripaille db index
 
-
 # Create an index for organism table
-tripaille db index --mode table --table chado.organism --index_name organisms --fields "genus|string" --fields "species|string" --links 'species|http://localhost:8500/tripal/organism/[genus]/[species]'
+
+tripaille db index --mode table --table chado.organism --index_name organisms --fields "genus|text" --fields "species|text"
